@@ -14,8 +14,8 @@ html {
   font-style: normal;
   font-weight: 400;
   font-size: $fz-default;
-  line-height: 24px;
-  font-family: $ff-plex;
+  line-height: 16px;
+  font-family: $ff-graphik;
   color: $color-default-black;
 
   -webkit-font-smoothing: antialiased;
@@ -24,10 +24,6 @@ html {
   text-rendering: optimizeLegibility;
   // если по прежнему есть проблемы с выравниванием
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
-
-  @include vp-374 {
-    font-size: size-mobile($fz-default);
-  }
 }
 
 body {
@@ -36,7 +32,6 @@ body {
 
   background-color: $color-default-white;
 
-  scrollbar-color: rgba($color-neon-blue, 0.5) rgba($color-neon-blue, 0.2);
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
@@ -46,21 +41,18 @@ body {
   }
 
   &::-webkit-scrollbar-track-piece {
-    background-color: rgba($color-neon-blue, 0.2);
     border-radius: 10px;
     width: 10px;
   }
 
   &::-webkit-scrollbar-thumb:vertical {
     height: 30px;
-    background-color: rgba($color-neon-blue, 0.5);
     border-radius: 10px;
   }
 }
 
 a {
   color: $color-default-black;
-  text-decoration: none;
 }
 
 img,

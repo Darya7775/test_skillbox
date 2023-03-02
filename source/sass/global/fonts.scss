@@ -1,10 +1,39 @@
-// @font-face {
-//   font-style: normal;
-//   font-weight: 300;
-//   font-family: "Plex";
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "GraphikLCTT";
 
-//   font-display: swap;
-//   src:
-//     url("../fonts/IBMPlexSansLight.woff2") format("woff2"),
-//     url("../fonts/IBMPlexSansLight.woff") format("woff");
-// }
+  font-display: swap;
+  src:
+    url("../fonts/GraphikLCTT-VA-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "GraphikLCTT";
+
+  font-display: swap;
+  src:
+    url("../fonts/GraphikLCTT-VA-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "GraphikLCTT";
+
+  font-display: swap;
+  src:
+    url("../fonts/GraphikLCTT-VA-Semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "GraphikLCTT";
+
+  font-display: swap;
+  src:
+    url("../fonts/GraphikLCTT-VA-Bold.woff2") format("woff2");
+}

@@ -1,2 +1,32 @@
+- const paymentOptions = [{description: "Оставить заявку на консультацию", checked: true,}, {description: "Оплатить всю сумму со скидкой 7000 ₽", value: "со скидкой 7000 ₽", class: "form__label-payment--visa",}, {description: "В рассрочку в Покупай со Сбером", value: "Покупай со Сбером", class: "form__label-payment--sber",}, {description: "В рассрочку в Тинькофф", value: "рассрочка в Тинькофф", class: "form__label-payment--tinkoff",}];
+
 mixin form()
-  form(action="")
+  form.form(action="https://echo.htmlacademy.ru", method="post")
+    .container.form__container
+      if paymentOptions.length > 1
+        fieldset.form__fieldset.form__fieldset--grid
+          legend.form__title  Выберите вариант оплаты
+          each item in paymentOptions
+            if item.checked === true
+              input.form__input-payment.visually-hidden(type="radio", name="payment", value=item.value, id=item.value, checked)
+              label.form__label-payment(for=item.value, class=item.class)=item.description
+            else
+              input.form__input-payment.visually-hidden(type="radio", name="payment", value=item.value, id=item.value)
+              label.form__label-payment(for=item.value, class=item.class)=item.description
+      fieldset.form__fieldset
+        legend.form__title Заполните контактные данные
+        .form__wrap-input
+          input.form__input(type="text", id="name", name="name", required)
+          label.form__label(for="name", aria-label="Введите имя") Имя
+        .form__wrap-input
+          input.form__input(type="tel", id="phone", name="phone", required)
+          label.form__label(for="phone", aria-label="Введите телефон") Телефон
+        .form__wrap-input
+          input.form__input(type="email", id="email", name="email", required)
+          label.form__label(for="email", aria-label="Введите электронную почту") Электронная почта
+      button.form__submit(type="submit") Отправить
+      p.form__text
+        | Нажимая на кнопку, я соглашаюсь на
+        | #[a.form__link(href="#") обработку персональных данных]
+        | и #[a.form__link(href="#") с правилами пользования Платформой]
+

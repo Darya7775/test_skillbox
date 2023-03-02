@@ -1,3 +1,20 @@
 mixin ordering()
   section.ordering
-    .container.ordering__container fgfgfg
+    .container.ordering__container
+      div
+        h1.ordering__title Заполните форму, <br> чтобы оформить заказ
+        p.ordering__text
+          | Забронируйте курсы со&nbsp;скидкой,
+          | а&nbsp;мы&nbsp;перезвоним, проконсультируем
+          | и&nbsp;оформим заказ.
+      div
+        h2.ordering__subtitle Итоговая стоимость
+        .ordering__wrapper
+          span.ordering__procent –00%
+          .ordering__wrap-old-price
+            del.ordering__old-price 000 000
+            span.ordering__ruble-old-price ₽
+          strong.ordering__price 0 000
+            sup.ordering__index-price ₽/мес.
+          span Рассрочка на NN месяцев
+    +form()

@@ -1,20 +1,18 @@
 .container {
   width: 100%;
-  max-width: 1440px;
+  min-width: 20em;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 40px 20px;
 
-  @include vp-1023 {
-    padding: 0 30px;
+  border-radius: 10px;
+  background-color: $color-default-white;
+
+  @include vp-768 {
+    padding: 32px 120px;
   }
 
-  @include vp-767 {
-    padding: 0 20px;
-  }
-
-  &--no-padding {
-    @include vp-767 {
-      padding: 0;
-    }
+  @include vp-1024 {
+    padding: 40px;
+    border-radius: 20px;
   }
 }

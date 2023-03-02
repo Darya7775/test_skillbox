@@ -5,32 +5,42 @@
 
 $color-default-black:               #000000;
 $color-default-white:               #ffffff;
-$color-transparent:                 rgba(255, 255, 255, 0);
 
 // Project palette
-// для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
 
-$color-neon-blue:                   #2c39f2;
-$color-torch-red:                   #ff1553;
-$color-white-smoke:                 #f2f2f2;
-$color-ghost-white:                 #f4f4ff;
-$color-amaranth:                    #d62155;
+// text
 
-// Gradient
+$color-secondary:                   #6b6b6b;
+$color-addition:                    #a6a4a0;
+$color-disable:                     #c3c2be;
 
-$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+// bg
+
+$color-bg-secondary:                #f7f7f5;
+$color-bg-secondary-accent:         #edecea;
+
+// Accent
+
+$color-brand:                       #3d3bff;
+$color-sale:                        #fff705;
+$color-danger:                      #ff5733;
+$color-danger-bg:                   #ffcdc2;
+
+// Admin
+
+$color-variable:                    #dcf4fe;
 
 // Typography
 // ---------------------------------
 
 // переменная используемая в html для подключения скейлинга
-$fz-default:                        16px;
+$fz-default:                        12px;
 
 // у некоторых шрифтов в ios возникают проблемы с символом рубля
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
 $ff-rouble:                         "Rouble", "Arial", sans-serif;
 
-$ff-plex:                           "Plex", "Arial", sans-serif;
+$ff-graphik:                        "GraphikLCTT", "Arial", sans-serif;
 $ff-neue-machina:                   "Neue Machina", "Arial", sans-serif;
 
 // Animation
@@ -47,13 +57,11 @@ $trans-600:                         0.6s $tf-default;
 // Viewports
 // ---------------------------------
 
-$vp-320:                            320px;
-$vp-375:                            375px;
-$vp-768:                            768px;
-$vp-1024:                           1024px;
-$vp-1280:                           1280px;
-$vp-1440:                           1440px;
-$vp-1920:                           1920px;
+$vp-320:                            20em;
+$vp-360:                            22.5em;
+$vp-768:                            48em;
+$vp-1024:                           64em;
+$vp-1280:                           80em;
 
 // Retina
 // ---------------------------------
