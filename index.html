@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Skillbox test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <section class="ordering">
+          <div class="container ordering__container">
+            <div>
+              <h1 class="ordering__title">Заполните форму, <br> чтобы оформить заказ</h1>
+              <p class="ordering__text">
+                Забронируйте курсы со&nbsp;скидкой,
+                а&nbsp;мы&nbsp;перезвоним, проконсультируем
+                и&nbsp;оформим заказ.
+              </p>
+            </div>
+            <div>
+              <h2 class="ordering__subtitle">Итоговая стоимость</h2>
+              <div class="ordering__wrapper"><span class="ordering__procent">–00%</span>
+                <div class="ordering__wrap-old-price">
+                  <del class="ordering__old-price">000 000</del><span class="ordering__ruble-old-price">₽</span>
+                </div><strong class="ordering__price">0 000<sup class="ordering__index-price">₽/мес.</sup></strong><span>Рассрочка на NN месяцев</span>
+              </div>
+            </div>
+          </div>
+          <form class="form" action="/" method="post">
+            <div class="container form__container">
+              <fieldset class="form__fieldset form__fieldset--grid">
+                <legend class="form__title"> Выберите вариант оплаты</legend>
+                <input class="form__input-payment visually-hidden" type="radio" name="payment" value="консультация" id="консультация" checked>
+                <label class="form__label-payment" for="консультация">Оставить заявку на консультацию</label>
+                <input class="form__input-payment visually-hidden" type="radio" name="payment" value="со скидкой 7000 ₽" id="со скидкой 7000 ₽">
+                <label class="form__label-payment form__label-payment--visa" for="со скидкой 7000 ₽">Оплатить всю сумму со скидкой 7000 ₽</label>
+                <input class="form__input-payment visually-hidden" type="radio" name="payment" value="Покупай со Сбером" id="Покупай со Сбером">
+                <label class="form__label-payment form__label-payment--sber" for="Покупай со Сбером">В рассрочку в Покупай со Сбером</label>
+                <input class="form__input-payment visually-hidden" type="radio" name="payment" value="рассрочка в Тинькофф" id="рассрочка в Тинькофф">
+                <label class="form__label-payment form__label-payment--tinkoff" for="рассрочка в Тинькофф">В рассрочку в Тинькофф</label>
+              </fieldset>
+              <fieldset class="form__fieldset">
+                <legend class="form__title">Заполните контактные данные</legend>
+                <div class="form__wrap-input">
+                  <input class="form__input" type="text" id="name" name="name" required>
+                  <label class="form__label" for="name" aria-label="Введите имя">Имя</label><span class="form__error--name">имя слишком короткое</span>
+                </div>
+                <div class="form__wrap-input">
+                  <input class="form__input" type="tel" id="phone" name="phone" required>
+                  <label class="form__label" for="phone" aria-label="Введите телефон">Телефон</label><span class="form__error--tel">телефон слишком короткий</span>
+                </div>
+                <div class="form__wrap-input">
+                  <input class="form__input" type="email" id="email" name="email" required>
+                  <label class="form__label" for="email" aria-label="Введите электронную почту">Электронная почта</label>
+                </div>
+              </fieldset>
+              <button class="form__submit" type="submit">Отправить</button>
+              <p class="form__text">
+                Нажимая на кнопку, я соглашаюсь на
+                <a class="form__link" href="#">обработку персональных данных</a>
+                и <a class="form__link" href="#">с правилами пользования Платформой</a>
+              </p>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
