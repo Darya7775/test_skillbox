@@ -5,10 +5,6 @@
 .form__container {
   display: flex;
   flex-direction: column;
-
-  @include vp-1024 {
-
-  }
 }
 
 .form__fieldset {
@@ -52,13 +48,6 @@
 
   cursor: pointer;
 
-  &::after {
-    @include vp-1024 {
-      bottom: 16px;
-      left: 15px;
-    }
-  }
-
   @include vp-768 {
     display: block;
     min-height: 84px;
@@ -76,57 +65,35 @@
   outline: 2px solid $color-brand;
 }
 
-.form__label-payment--visa {
-  padding-bottom: 40px;
+.form__input-payment:hover + .form__label-payment {
+  @include vp-1024 {
+    outline: 1px solid $color-brand;
+  }
+}
 
-  position: relative;
+.form__label-payment--visa {
+  @include labelIcon;
 
   &::after {
-    content: "";
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-
     width: 76px;
-    height: 16px;
-
     background-image: url("../img/svg/visa.svg");
   }
 }
 
 .form__label-payment--sber {
-  padding-bottom: 40px;
-
-  position: relative;
+  @include labelIcon;
 
   &::after {
-    content: "";
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-
     width: 19px;
-    height: 16px;
-
     background-image: url("../img/svg/sber.svg");
   }
 }
 
 .form__label-payment--tinkoff {
-  padding-bottom: 40px;
-
-  position: relative;
-  overflow-wrap: break-word;
+  @include labelIcon;
 
   &::after {
-    content: "";
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-
     width: 61px;
-    height: 16px;
-
     background-image: url("../img/svg/tinkoff.svg");
   }
 }
@@ -140,7 +107,7 @@
   font-size: 1.33em;
   line-height: 125%;
 
-  border: 1px solid #E4E4E4;
+  border: 1px solid #e4e4e4;
   border-radius: 10px;
   background-color: $color-bg-secondary;
   padding: 18px;
@@ -157,7 +124,7 @@
     border: 1px solid $color-disable;
   }
 
-  &:valid  {
+  &:valid {
     background-color: $color-bg-secondary;
   }
 }
@@ -181,6 +148,11 @@
 
 .form__input:disabled + .form__label {
   color: $color-disable;
+}
+
+.form__error--tel,
+.form__error--name {
+  @include error;
 }
 
 .form__submit {
@@ -221,4 +193,10 @@
 
 .form__text {
   margin: 0;
+}
+
+.form__link {
+  @include hover-focus {
+    opacity: 0.6;
+  }
 }

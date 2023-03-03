@@ -29,12 +29,12 @@
               </div>
             </div>
           </div>
-          <form class="form" action="https://echo.htmlacademy.ru" method="post">
+          <form class="form" action="/" method="post">
             <div class="container form__container">
               <fieldset class="form__fieldset form__fieldset--grid">
                 <legend class="form__title"> Выберите вариант оплаты</legend>
-                <input class="form__input-payment visually-hidden" type="radio" name="payment" checked>
-                <label class="form__label-payment">Оставить заявку на консультацию</label>
+                <input class="form__input-payment visually-hidden" type="radio" name="payment" value="консультация" id="консультация" checked>
+                <label class="form__label-payment" for="консультация">Оставить заявку на консультацию</label>
                 <input class="form__input-payment visually-hidden" type="radio" name="payment" value="со скидкой 7000 ₽" id="со скидкой 7000 ₽">
                 <label class="form__label-payment form__label-payment--visa" for="со скидкой 7000 ₽">Оплатить всю сумму со скидкой 7000 ₽</label>
                 <input class="form__input-payment visually-hidden" type="radio" name="payment" value="Покупай со Сбером" id="Покупай со Сбером">
@@ -46,11 +46,11 @@
                 <legend class="form__title">Заполните контактные данные</legend>
                 <div class="form__wrap-input">
                   <input class="form__input" type="text" id="name" name="name" required>
-                  <label class="form__label" for="name" aria-label="Введите имя">Имя</label>
+                  <label class="form__label" for="name" aria-label="Введите имя">Имя</label><span class="form__error--name">имя слишком короткое</span>
                 </div>
                 <div class="form__wrap-input">
                   <input class="form__input" type="tel" id="phone" name="phone" required>
-                  <label class="form__label" for="phone" aria-label="Введите телефон">Телефон</label>
+                  <label class="form__label" for="phone" aria-label="Введите телефон">Телефон</label><span class="form__error--tel">телефон слишком короткий</span>
                 </div>
                 <div class="form__wrap-input">
                   <input class="form__input" type="email" id="email" name="email" required>

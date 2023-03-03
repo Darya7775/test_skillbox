@@ -117,7 +117,41 @@
     line-height: 130%;
   }
 }
-// ---------------------------------
 
-// не нужно добавлять свои миксины для ресета списков, обнуления кнопок и прочие
-// этим вы усложняете работу команды, проверку вашего кода и будущую поддержку проекта
+// label-icon
+
+@mixin labelIcon {
+  padding-bottom: 40px;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+
+    height: 16px;
+
+    @include vp-1024 {
+      bottom: 16px;
+      left: 15px;
+    }
+  }
+
+  @include vp-1024 {
+    padding-bottom: 40px;
+  }
+}
+
+// error
+
+@mixin error {
+  display: none;
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+
+  color: $color-danger;
+}
+// ---------------------------------

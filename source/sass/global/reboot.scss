@@ -32,6 +32,7 @@ body {
 
   background-color: $color-default-white;
 
+  scrollbar-color: #b1e1f5 rgba($color-variable, 0.2);
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
@@ -41,12 +42,14 @@ body {
   }
 
   &::-webkit-scrollbar-track-piece {
+    background-color: rgba($color-variable, 0.2);
     border-radius: 10px;
     width: 10px;
   }
 
   &::-webkit-scrollbar-thumb:vertical {
     height: 30px;
+    background-color: #b1e1f5;
     border-radius: 10px;
   }
 }
@@ -66,14 +69,10 @@ textarea {
   resize: none;
 }
 
-// chrome autofill background removal
-// если на проекте у инпутов используются разные цвета фонов\текста -
-// удалите это из глобала и используйте локально с нужными цветами
-// rgba не подойдет, сконвертируйте цвет в hex без прозрачности
-// если в стилях уже используется box-shadow есть другое решение -
-// задать к списку транзишенов `background-color 10000000s ease-out`
-input:-webkit-autofill {
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
   box-shadow: inset 0 0 0 1000px $color-default-white;
+  transition: background-color 600000s 0s, color 600000s 0s;
 
   -webkit-text-fill-color: $color-default-black;
 }

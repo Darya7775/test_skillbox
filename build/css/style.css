@@ -575,6 +575,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: #ffffff;
+  scrollbar-color: #b1e1f5 rgba(220, 244, 254, 0.2);
   scrollbar-width: thin;
 }
 
@@ -585,12 +586,14 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track-piece {
+  background-color: rgba(220, 244, 254, 0.2);
   border-radius: 10px;
   width: 10px;
 }
 
 body::-webkit-scrollbar-thumb:vertical {
   height: 30px;
+  background-color: #b1e1f5;
   border-radius: 10px;
 }
 
@@ -609,9 +612,12 @@ textarea {
   resize: none;
 }
 
-input:-webkit-autofill {
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
   -webkit-box-shadow: inset 0 0 0 1000px #ffffff;
   box-shadow: inset 0 0 0 1000px #ffffff;
+  -webkit-transition: background-color 600000s 0s, color 600000s 0s;
+  transition: background-color 600000s 0s, color 600000s 0s;
   -webkit-text-fill-color: #000000;
 }
 
@@ -974,8 +980,11 @@ button,
   position: absolute;
   bottom: 12px;
   left: 12px;
-  width: 76px;
   height: 16px;
+}
+
+.form__label-payment--visa::after {
+  width: 76px;
   background-image: url("../img/svg/visa.svg");
 }
 
@@ -989,15 +998,17 @@ button,
   position: absolute;
   bottom: 12px;
   left: 12px;
-  width: 19px;
   height: 16px;
+}
+
+.form__label-payment--sber::after {
+  width: 19px;
   background-image: url("../img/svg/sber.svg");
 }
 
 .form__label-payment--tinkoff {
   padding-bottom: 40px;
   position: relative;
-  overflow-wrap: break-word;
 }
 
 .form__label-payment--tinkoff::after {
@@ -1005,8 +1016,11 @@ button,
   position: absolute;
   bottom: 12px;
   left: 12px;
-  width: 61px;
   height: 16px;
+}
+
+.form__label-payment--tinkoff::after {
+  width: 61px;
   background-image: url("../img/svg/tinkoff.svg");
 }
 
@@ -1018,7 +1032,7 @@ button,
   width: 100%;
   font-size: 1.33em;
   line-height: 125%;
-  border: 1px solid #E4E4E4;
+  border: 1px solid #e4e4e4;
   border-radius: 10px;
   background-color: #f7f7f5;
   padding: 18px;
@@ -1053,6 +1067,15 @@ button,
 
 .form__input:disabled + .form__label {
   color: #c3c2be;
+}
+
+.form__error--tel,
+.form__error--name {
+  display: none;
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  color: #ff5733;
 }
 
 .form__submit {
@@ -1090,46 +1113,9 @@ button,
   margin: 0;
 }
 
-/* @mixin hover-focus {
-    @media (hover: hover) {
-      &:hover:not(.focus-visible) {
-        @content;
-      }
-    }
-
-    &.focus-visible:focus {
-      @content;
-    }
-  }
-*/
-
-/*  @include hover-focus {
-      opacity: 0.8;
-    }
-*/
-
-/*@mixin hover {
-    @media (hover: hover) {
-      &:hover:not(.focus-visible) {
-        @content;
-      }
-    }
-  }
-*/
-
-/*@mixin focus {
-    &.focus-visible:focus {
-      @content;
-    }
-  }
-*/
-
-/*@mixin active {
-    &.focus-visible:active {
-      @content;
-    }
-  }
-*/
+.form__link.focus-visible:focus {
+  opacity: 0.6;
+}
 
 @media (min-width: 22.5em) {
   .ordering__container {
@@ -1246,16 +1232,42 @@ button,
     margin-bottom: 32px;
   }
 
-  .form__label-payment::after {
-    bottom: 16px;
-    left: 15px;
-  }
-
   .form__label-payment {
     min-height: 104px;
     font-size: 1.17em;
     line-height: 143%;
     padding: 16px;
+  }
+
+  .form__input-payment:hover + .form__label-payment {
+    outline: 1px solid #3d3bff;
+  }
+
+  .form__label-payment--visa::after {
+    bottom: 16px;
+    left: 15px;
+  }
+
+  .form__label-payment--visa {
+    padding-bottom: 40px;
+  }
+
+  .form__label-payment--sber::after {
+    bottom: 16px;
+    left: 15px;
+  }
+
+  .form__label-payment--sber {
+    padding-bottom: 40px;
+  }
+
+  .form__label-payment--tinkoff::after {
+    bottom: 16px;
+    left: 15px;
+  }
+
+  .form__label-payment--tinkoff {
+    padding-bottom: 40px;
   }
 
   .form__submit {
@@ -1298,5 +1310,9 @@ button,
 @media (hover: hover) {
   .form__input:hover:not(.focus-visible) {
     border: 1px solid #c3c2be;
+  }
+
+  .form__link:hover:not(.focus-visible) {
+    opacity: 0.6;
   }
 }
